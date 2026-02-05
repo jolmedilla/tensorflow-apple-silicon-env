@@ -1,0 +1,11 @@
+name: tf-apple
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - tensorflow=2.11.*
+  - tensorflow-metal
+  - numpy
+  - pandas
+  - matplotlib
+  - jupyterlab

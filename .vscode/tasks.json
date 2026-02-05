@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Bootstrap TensorFlow Apple env",
+      "type": "shell",
+      "command": "./bootstrap.sh"
+    },
+    {
+      "label": "Run Jupyter (Apple GPU)",
+      "type": "shell",
+      "command": "./run-jupyter.sh"
+    }
+  ]
+}

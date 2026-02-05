@@ -1,0 +1,4 @@
+{
+  "python.defaultInterpreterPath": "./env/apple/bin/python",
+  "jupyter.jupyterServerType": "local"
+}
