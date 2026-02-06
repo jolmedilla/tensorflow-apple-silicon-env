@@ -22,12 +22,7 @@ La idea central es:
 ├── environment.yml        # Definición del entorno TensorFlow Apple
 ├── bootstrap.sh           # Crea el entorno de forma local y autocontenida
 ├── run-jupyter.sh         # Lanza Jupyter usando ese entorno
-├── env/
-│   └── apple/             # Entorno micromamba (no global)
-├── mamba/
-│   └── micromamba         # Binario micromamba local al proyecto
-├── notebooks/
-│   └── test-notebook.ipynb
+├── test-notebook.ipynb.   # Notebook de ejemplo
 ├── .vscode/
 │   ├── tasks.json         # Tareas de VS Code
 │   └── settings.json      # Configuración de Python/Jupyter
