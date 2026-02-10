@@ -22,7 +22,7 @@ La idea central es:
 ├── environment.yml        # Definición del entorno TensorFlow Apple
 ├── bootstrap.sh           # Crea el entorno de forma local y autocontenida
 ├── run-jupyter.sh         # Lanza Jupyter usando ese entorno
-├── test-notebook.ipynb.   # Notebook de ejemplo
+├── test-notebook.ipynb    # Notebook de ejemplo
 ├── .vscode/
 │   ├── tasks.json         # Tareas de VS Code
 │   └── settings.json      # Configuración de Python/Jupyter
@@ -42,7 +42,7 @@ Incluye:
 * TensorFlow 2.11
 * tensorflow-metal (backend GPU para Apple Silicon)
 * JupyterLab
-* dependencias científicas habituales (numpy, pandas, matplotlib)
+* dependencias científicas habituales (numpy, pandas, matplotlib, scikit-learn)
 
 El entorno:
 * **no se registra globalmente**
@@ -87,8 +87,6 @@ http://localhost:8888/lab?token=...
 
 El servidor queda corriendo mientras la tarea esté activa.
 
-⸻
-
 ### 4. Usa Jupyter Notebooks desde VS Code
 
 Opción recomendada: conectar VS Code al servidor lanzado
@@ -102,8 +100,6 @@ A partir de ese momento:
 * el notebook se ejecuta **en ese servidor**
 * usa **el entorno TensorFlow Apple**
 * tiene **acceso a la GPU**
-
-⸻
 
 ### 5. Verifica que la GPU está activa
 
@@ -133,12 +129,17 @@ rm -rf env mamba
 
 ⸻
 
-## Resumen
+## Notas importantes sobre TensorFlow + Apple Silicon (Metal)
 
-Este repositorio ofrece:
-* TensorFlow + GPU en Apple Silicon
-* Jupyter Notebooks desde VS Code
-* entorno reproducible y autocontenido
-* cero impacto en el sistema
+Al trabajar con **TensorFlow sobre Apple Silicon (M1/M2/…) usando `tensorflow-metal`**, existen algunas **limitaciones conocidas del backend Metal** que requieren pequeños ajustes en el código para evitar errores en tiempo de ejecución.
 
-Una solución práctica y realista a las limitaciones actuales de macOS para ML.
+En **TensorFlow / `tf.keras` 2.11**, la capa `keras.layers.LeakyReLU` **no acepta** el argumento `alpha`.
+
+El parámetro correcto es **`negative_slope`**, por lo que se debe usar:
+```python
+keras.layers.LeakyReLU(negative_slope=0.2)  # no soportado en tf.keras 2.11
+```
+y no:
+```python
+keras.layers.LeakyReLU(alpha=0.2)
+```

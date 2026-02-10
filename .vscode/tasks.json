@@ -4,12 +4,14 @@
     {
       "label": "Bootstrap TensorFlow Apple env",
       "type": "shell",
-      "command": "./bootstrap.sh"
+      "command": "./bootstrap.sh",
+      "problemMatcher": []
     },
     {
       "label": "Run Jupyter (Apple GPU)",
       "type": "shell",
-      "command": "./run-jupyter.sh"
+      "command": "./run-jupyter.sh",
+      "problemMatcher": []
     }
   ]
 }

@@ -2,12 +2,24 @@ name: tf-apple
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
-  - tensorflow=2.11.*
-  - numpy
-  - pandas
-  - matplotlib
+  - python=3.11
+  - h5py
   - jupyterlab
-  - pip
+  - matplotlib
+  - joblib
+  - tqdm
+  - pip[version='>=23.3']
+  - numpy[version='>=1.23.5,<2.0']
+  - seaborn
+  - ipykernel
+  - pandas
   - pip:
-      - tensorflow-metal==0.7.*
+      - scikeras==0.13.0
+      - scikit-learn==1.7.1
+      - tensorboard==2.16.2
+      - tensorboard-data-server==0.7.2
+      - tensorflow==2.16.2
+      - tensorflow-io-gcs-filesystem==0.37.1
+      - tensorflow-macos==2.16.2
+      - tensorflow-metal==1.2.0
+      - Werkzeug==3.1.3
