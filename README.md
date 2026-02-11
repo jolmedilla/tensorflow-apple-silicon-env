@@ -33,6 +33,21 @@ Nada fuera de este directorio se ve afectado.
 
 ⸻
 
+## Requisitos previos
+
+Necesitas tener instalado lo siguiente en tu sistema:
+
+* Visual Studio Code
+* La extensión para lenguaje Python de VSCode (id: `ms-python.python`)
+* La extensión para Jupyter notebooks de VSCode (id: `ms-toolsai.jupyter`)
+* Es recomendable, pero no necesario, tener la Xcode Command Line Tools:
+```shell
+xcode-select --install
+````
+
+⸻
+
+
 ## Dependencias y entorno
 
 El entorno se define en environment.yml y se crea usando micromamba, descargado localmente por el propio proyecto.
