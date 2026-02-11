@@ -38,8 +38,8 @@ Nada fuera de este directorio se ve afectado.
 El entorno se define en environment.yml y se crea usando micromamba, descargado localmente por el propio proyecto.
 
 Incluye:
-* Python 3.10
-* TensorFlow 2.11
+* Python 3.11
+* TensorFlow 2.16
 * tensorflow-metal (backend GPU para Apple Silicon)
 * JupyterLab
 * dependencias científicas habituales (numpy, pandas, matplotlib, scikit-learn)
