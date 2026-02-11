@@ -114,7 +114,7 @@ A partir de ese momento:
 * usa **el entorno TensorFlow Apple**
 * tiene **acceso a la GPU**
 
-### 5. Verifica que la GPU está activa
+### 4. Verifica que la GPU está activa
 
 En cualquier celda del notebook:
 ```python
