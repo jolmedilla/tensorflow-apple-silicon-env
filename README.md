@@ -146,7 +146,7 @@ rm -rf env mamba
 
 Al trabajar con **TensorFlow sobre Apple Silicon (M1/M2/…) usando `tensorflow-metal`**, existen algunas **limitaciones conocidas del backend Metal** que requieren pequeños ajustes en el código para evitar errores en tiempo de ejecución.
 
-En **TensorFlow / `tf.keras` 2.11**, la capa `keras.layers.LeakyReLU` **no acepta** el argumento `alpha`.
+En **TensorFlow / `tf.keras` 2.16**, la capa `keras.layers.LeakyReLU` **no acepta** el argumento `alpha`.
 
 El parámetro correcto es **`negative_slope`**, por lo que se debe usar:
 ```python
