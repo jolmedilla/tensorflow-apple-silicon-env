@@ -165,7 +165,7 @@ En **TensorFlow / `tf.keras` 2.16**, la capa `keras.layers.LeakyReLU` **no acept
 
 El parámetro correcto es **`negative_slope`**, por lo que se debe usar:
 ```python
-keras.layers.LeakyReLU(negative_slope=0.2)  # no soportado en tf.keras 2.11
+keras.layers.LeakyReLU(negative_slope=0.2)
 ```
 y no:
 ```python
